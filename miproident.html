@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Drawing Example - Part 1</title>
+</head>
+<body>
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+
+<script>
+// JavaScript for Part 1
+// Setting up the canvas and drawing a simple line
+
+// Get the canvas element by its ID
+const canvas = document.getElementById('myCanvas');
+
+// Check if the canvas is supported
+if (canvas.getContext) {
+    // Get the 2D rendering context
+    const context = canvas.getContext('2d');
+    
+    // Variables for the starting point and line lengths
+    const x = 50; // Starting x coordinate
+    const y = 50; // Starting y coordinate
+    const l = 100; // Length to add to x for the end point
+    const t = 75;  // Length to add to y for the end point
+    
+    // Begin a new path
+    context.beginPath();
+    
+    // Move the "pen" to the starting point (x, y)
+    context.moveTo(x, y);
+    
+    // Draw a line to the point (x + l, y + t)
+    context.lineTo(x + l, y + t);
+    
+    // Stroke the path to make the line visible
+    context.stroke();
+} else {
+    // Canvas is not supported in this browser
+    alert("Your browser does not support HTML5 Canvas.");
+}
+</script>
+</body>
+</html>
